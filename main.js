@@ -11,7 +11,7 @@
   $('#year').textContent=String(new Date().getFullYear());
   // Показываем ненавязчивую строку связи после первого экрана.
   const floating=$('.mobile-sticky-cta');
-  const updateFloating=()=>{const hero=$('.hero');const threshold=(hero?.getBoundingClientRect().bottom||0)<-50;floating?.classList.toggle('is-visible',window.innerWidth<=680&&threshold)};
+  const updateFloating=()=>{const hero=$('.hero');const threshold=(hero?.getBoundingClientRect().bottom||0)<-50;const contact=document.querySelector('#contact');const contactVisible=contact&&contact.getBoundingClientRect().top<window.innerHeight-80;floating?.classList.toggle('is-visible',window.innerWidth<=680&&threshold&&!contactVisible)};
   window.addEventListener('scroll',updateFloating,{passive:true});window.addEventListener('resize',updateFloating);updateFloating();
   // При выборе проблемы автоматически выставляем тему в форме.
   $$('a[data-reason]').forEach(link=>link.addEventListener('click',()=>{

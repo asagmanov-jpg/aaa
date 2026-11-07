@@ -154,7 +154,7 @@ h2 em{font-style:normal;color:#797d79}
 .eyeline{color:#8a8f8b;margin:0 0 21px}
 .result-checklist,.outcome-list{list-style:none;margin:0;padding:0}
 .result-checklist li{position:relative;padding:12px 0 12px 31px;border-bottom:1px solid #e9ebe7;font-size:13px;font-weight:500;line-height:1.5}
-.result-checklist li:before{content:"↗";color:var(--orange);font-weight:800;position:absolute;left:0;top:10px}
+.result-checklist li .icon-diagonal{position:absolute;left:0;top:13px;width:16px;height:16px;color:var(--orange)}
 .results-image{min-height:445px;position:relative;overflow:hidden;background:#e4e5e1}
 .results-image img{width:100%;height:100%;object-fit:cover;filter:grayscale(.7);transform:scale(1.15)}
 .results-image span{position:absolute;bottom:18px;left:20px;font-size:9px;letter-spacing:.075em;font-weight:750;background:#fff;padding:8px 11px}
@@ -558,3 +558,62 @@ h2{font-size:clamp(34px,8vw,45px)}.heading-description{margin-top:19px;max-width
 .section-contact:before{background:linear-gradient(115deg,rgba(23,25,25,.97),rgba(23,25,25,.88)),url('./assets/light-and-concrete.webp') center/cover no-repeat}
 }
 @media(max-width:374px){.hero-copy{margin-inline:12px;padding:24px 17px 30px}.hero-media{height:240px}.hero h1{font-size:clamp(31px,9.35vw,37px)}}
+
+/* ===========================================================
+   2026-11 / approved mobile and desktop refinements
+   Diagonal arrows are vector paths, never emoji glyphs.
+   =========================================================== */
+.icon-diagonal{display:block;flex:none;width:20px;height:20px;stroke:currentColor;vertical-align:middle}
+.header-cta .icon-diagonal{width:17px;height:17px}
+.button .icon-diagonal{width:19px;height:19px}
+.inline-link .icon-diagonal{width:17px;height:17px;margin-left:9px;display:inline-block}
+.contact-phone-link .icon-diagonal{width:16px;height:16px;margin-left:5px;display:inline-block;color:var(--orange)}
+.problem-card{isolation:isolate}
+.problem-count{display:none!important}
+.problem-arrow{display:grid;place-items:center;width:29px;height:29px;right:18px;bottom:18px;color:var(--orange)}
+.problem-arrow .icon-diagonal{width:23px;height:23px}
+.card-photo .problem-arrow{background:transparent;right:17px;bottom:15px;color:#fff;width:30px;height:30px;filter:drop-shadow(0 1px 3px rgba(0,0,0,.55))}
+.card-text{justify-content:center}
+.card-text .problem-title{margin-top:0;padding-right:18px}
+.card-text p{margin:11px 0 0;max-width:calc(100% - 20px)}
+.result-checklist li .icon-diagonal{position:absolute;left:0;top:13px;width:16px;height:16px}
+/* The photo is a clean visual area; no metadata can collide with copy. */
+.hero-photo-index,.hero-media-bottom{display:none!important}
+@media (max-width:680px){
+  .hero-grid{display:flex;flex-direction:column;padding:0;gap:0;width:100%;max-width:none}
+  .hero-media{order:0;width:100%;height:clamp(250px,69vw,355px);margin:0;min-height:0;overflow:hidden}
+  .hero-media picture,.hero-media picture img{display:block;width:100%;height:100%}
+  .hero-media picture img{object-fit:cover;object-position:59% 50%}
+  .hero-copy{order:1;position:relative;z-index:1;display:block;min-height:0;margin:0;padding:32px clamp(20px,6vw,30px) 38px;background:var(--paper);box-shadow:none}
+  .hero-copy .eyebrow{display:none}
+  .hero h1{max-width:570px;font-size:clamp(31px,8.5vw,43px);line-height:1.11;letter-spacing:-.054em;overflow-wrap:normal}
+  .hero-category{font-size:10px;letter-spacing:.04em;gap:10px;margin-bottom:15px}
+  .hero-intro{font-size:14px;line-height:1.7;margin:19px 0 24px}
+  .hero-actions .button{font-size:12px;min-height:54px;align-items:center;gap:10px;padding:14px 16px}
+  .hero-location{margin-top:27px;padding-top:17px;font-size:10px}
+  .problem-grid{grid-template-columns:1fr;gap:10px}
+  .problem-card{height:190px;min-height:190px;padding:21px 20px}
+  .problem-card.card-text{height:auto;min-height:198px;justify-content:center;padding:22px 20px 26px}
+  .problem-card.dark-card{min-height:198px}
+  .problem-title{font-size:clamp(22px,6.3vw,27px);max-width:calc(100% - 28px)}
+  .card-text .problem-title{margin:0}
+  .card-text p{font-size:13px;line-height:1.54;max-width:calc(100% - 24px);margin:10px 0 0}
+  .problem-arrow{right:17px;bottom:15px}
+  .card-photo .problem-arrow{color:var(--orange);right:14px;bottom:14px;filter:drop-shadow(0 1px 3px #111)}
+  .mobile-sticky-cta{min-height:0;padding:8px 12px calc(8px + env(safe-area-inset-bottom));gap:8px}
+  .mobile-sticky-cta>a{min-height:45px;font-size:12px;padding:9px 12px}
+  .mobile-sticky-cta .sticky-consult .icon-diagonal{width:18px;height:18px}
+  .mobile-sticky-cta .sticky-consult{min-width:0}
+  .mobile-sticky-cta .sticky-call{flex:none}
+  .footer-lower{padding-bottom:calc(92px + env(safe-area-inset-bottom))}
+}
+@media (max-width:374px){
+  .hero-copy{margin:0;padding:28px 18px 34px}
+  .hero-media{height:235px}
+  .hero h1{font-size:clamp(30px,8.6vw,34px)}
+  .problem-card{min-height:183px}
+  .problem-card.card-text,.problem-card.dark-card{min-height:194px}
+  .mobile-sticky-cta{padding-left:8px;padding-right:8px;gap:6px}
+  .mobile-sticky-cta>a{font-size:11px;padding-inline:8px}
+  .mobile-sticky-cta .icon-diagonal{width:17px;height:17px}
+}
